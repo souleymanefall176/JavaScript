@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Eclairage || Nocturne</title>
+    <script>
+        function darkmode(){
+            var theme = document.body;
+            theme.classList.toggle("dark-mode");
+            var texte = document.querySelector(".mybtn");
+            var bouton = document.querySelector(".mybtn");
+            var para = document.querySelector("#titre");
+            
+            if(texte.innerHTML === "Nocturne" && para.innerHTML === "L'ECRAN EST EN MODE ECLAIRAGE"){
+                texte.innerHTML = "Eclairage";
+                texte.style.color="black";
+                para.innerHTML = "L'ECRAN EST EN MODE NOCTURNE";
+                para.style.color = "white";
+                bouton.style.backgroundColor="white";
+                bouton.style.transition=".5s";
+            }else if(texte.innerHTML = "Eclairage" && para.innerHTML === "L'ECRAN EST EN MODE NOCTURNE"){
+                texte.innerHTML = "Nocturne";
+                texte.style.color="white";
+                para.style.color = "black";
+                para.innerHTML = "L'ECRAN EST EN MODE ECLAIRAGE";
+                bouton.style.backgroundColor="black";
+                bouton.style.transition=".5s";
+            }  
+
+        }
+        
+        
+    </script>
+</head>
+<body>
+    <button class="mybtn" onclick="darkmode()">Nocturne</button>
+    <h1 id="titre">L'ECRAN EST EN MODE ECLAIRAGE</h1>
+</body>
+</html>
+
