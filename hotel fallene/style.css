@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: rgb(223, 223, 223);
+    display: flex;
+    justify-content: center;
+    padding-top: 5px;
+    min-height: 100vh;
+}
+.main{
+    width: 35%;
+    height: 600px;
+    border-radius: 6px;
+    padding: 5px;
+    background-color: white;
+    
+    
+}
+.main .titre{
+    display: inline-block;
+    text-align: center;
+    padding: 8px;
+    width: 100%;
+    background-color: rgb(223, 223, 223);
+    height: 40px;
+    
+}
+.formulaire{
+    padding: 2%;
+}
+label{
+    display: inline-block;
+    width: 100%;
+}
+input,
+select
+{
+    width: 95%;
+    height: 30px;
+    border: 1px solid rgb(223, 223, 223);
+    border-radius: 6px;
+    padding: 5px;
+    
+}
+button
+{
+    background-color: rgb(23, 98, 248);
+    padding: 10px;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    width: 80px;
+
+}
+#annule{
+    background-color: rgb(233, 11, 11);
+}
+.bouton
+{
+    display: flex;
+    justify-content: space-around;
+}
+#footer{
+    position: absolute;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 95vh;
+}
+table{
+    width: 100%;
+    margin: 5px 0;
+    flex-wrap: wrap;
+}
+tr
+{
+    width: 100%;
+    background: white;
+}
+td{
+    border-right: 1px solid rgb(243, 243, 243);
+    padding: 5px;
+}

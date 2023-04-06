@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Hotêl Fallene</title>
+  </head>
+  <body>
+    <div class="main">
+      <h3 class="titre">Reservation</h3>
+      <div class="formulaire">
+        <form class="form">
+          <label for="categorie">Categorie</label>
+          <select name="categorie" id="categorie">
+            <option value="Chambre Simple">Choisir</option>
+            <option value="Chambre Simple">Chambre Simple</option>
+            <option value="Chambre Double">Chambre Double</option>
+            <option value="Suite">Suite</option>
+          </select>
+          <label for="">Nuite</label>
+          <input type="text" disabled id="nuit" />
+          <label for="">Date de Reservation</label>
+          <input type="date" id="dateReservation" required />
+          <label for="">Nombre de jours</label>
+          <input type="text" required id="nbrJour" />
+          <button id="calcule">Calculer</button>
+          <label for="">Montant à payer</label>
+          <input type="text" disabled id="montant" />
+          <label for="">Prenom Client</label>
+          <input type="text" id="prenomClient" required />
+          <label for="">Nom Client</label>
+          <input type="text" id="nomClient" required />
+          <label for="">Adresse</label>
+          <input type="text" id="adressClient" required />
+          <label for="">Telephone</label>
+          <input type="text" id="telClient" required />
+          <div class="bouton">
+            <button id="enregistrement">Enregistrer</button>
+            <button id="annule">Annuler</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div id="footer">
+      <table id="table"></table>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
