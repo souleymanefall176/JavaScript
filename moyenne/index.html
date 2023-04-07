@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moyenne</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <div class="titre">
+        <h3>Moyenne</h3>
+      </div>
+      <div class="matiere" id="matiere">
+        <div class="mat1">
+          <input type="text" class="nom" placeholder="Matiere" />
+          <select name="coef" id="coef">
+            <option value="0">Coef</option>
+            <option value="2">Coef 2</option>
+            <option value="3">Coef 3</option>
+            <option value="4">Coef 4</option>
+          </select>
+          <input type="text" class="note note1" placeholder="Note devoir 1" />
+          <input type="text" class="note note2" placeholder="Note devoir 2" />
+          <input type="text" class="note note3" placeholder="Note Exam" />
+        </div>
+      </div>
+      <div class="button">
+        <button id="ajout">+</button>
+        <button id="calculer">Calculer</button>
+        <input type="text" disabled id="resultat" />
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
