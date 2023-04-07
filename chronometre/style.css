@@ -1,0 +1,53 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: aqua;
+}
+.chronometre
+{
+    background-color: white;
+    width:400px;
+    padding: 20px;
+    text-align: center;
+    text-align: center;
+    border-radius: 6px;
+}
+.temps
+{
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 21px;
+    font-weight: 400;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+.controle
+{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+button
+{
+    background-color: aqua;
+    width: 31%;
+    border: none;
+    padding: 5px;
+    color: white;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: 400;
+    transition: all .5s ease;
+    cursor: pointer;
+}
+button:hover
+{
+    transform: scale(0.9);
+}
