@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moyenne et Conversion</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="principal">
+      <div class="titre">
+        <h2>OPERATION</h2>
+      </div>
+      <form id="formulaire">
+        <label>Valeur 1</label>
+        <input type="text" id="valeur1" placeholder="Valeur 1" />
+        <label>Valeur 2</label>
+        <input type="text" id="valeur2" placeholder="Valeur 2" />
+        <label>Operation</label>
+        <select id="operation">
+          <option value="aucune">Choisir une operation</option>
+          <option value="Addition">Addition</option>
+          <option value="Soustraction">Soustraction</option>
+          <option value="Multiplication">Multiplication</option>
+          <option value="Division">Division</option>
+          <option value="Modulo">Modulo</option>
+        </select>
+        <button id="calculer">Calculer</button>
+        <label>Resultat</label>
+        <input type="text" id="resultat" placeholder="Resultat" disabled />
+        <div class="titre">
+          <h2>CONVERSION</h2>
+        </div>
+        <label>Decimal</label>
+        <input type="text" id="decimal" placeholder="Decimal" />
+        <label>Binaire</label>
+        <input type="text" id="binaire" disabled />
+      </form>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
