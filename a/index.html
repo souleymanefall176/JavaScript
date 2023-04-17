@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>toggle</title>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <div class="bouton1">
+        <button id="button"></button>
+      </div>
+    </div>
+
+    <div class="col-md-8 offset-2 mt-3">
+      <div class="card">
+        <div class="card-header bg-info">
+          <h4>INFORMATION</h4>
+        </div>
+        <div class="card-body">
+          <label for="prenom">Prenom</label>
+          <input
+            class="form-control"
+            type="text"
+            name="prenom"
+            id="prenom"
+            required
+          />
+          <div id="erreurPrenom" class="text-danger" hidden>
+            Prenom Incorrect
+          </div>
+          <label for="nom">Nom</label>
+          <input
+            class="form-control"
+            type="text"
+            name="nom"
+            id="nom"
+            required
+          />
+          <div id="erreurNom" class="text-danger" hidden>Nom Incorrect</div>
+          <label for="nom">Age</label>
+          <input
+            class="form-control"
+            type="number"
+            name="age"
+            id="age"
+            required
+          />
+          <div id="erreurAge" class="text-danger" hidden>Age Incorrect</div>
+          <label for="nom">nom d'Utilisateur</label>
+          <input
+            class="form-control"
+            type="text"
+            name="nomUser"
+            id="nomUser"
+            disabled
+          />
+          <div id="erreurNomUser" class="text-danger" hidden></div>
+          <label for="mail">Email</label>
+          <input
+            class="form-control"
+            type="mail"
+            name="mail"
+            id="mail"
+            disabled
+          />
+          <div id="erreurEmail" class="text-danger" hidden></div>
+          <label for="tel">Telephone</label>
+          <input
+            class="form-control"
+            type="number"
+            name="tel"
+            id="tel"
+            required
+          />
+          <div id="erreurTel" class="text-danger" hidden>Tel Incorrect</div>
+
+          <label for="password">Mot de passe</label>
+          <input
+            class="form-control"
+            type="password"
+            name="password"
+            id="password"
+            required
+          />
+          <div id="erreurPassword" class="text-danger" hidden>
+            Mot de passe Incorrect
+          </div>
+
+          <div class="row mt-2">
+            <div class="col-md-2 offset-5">
+              <button
+                class="btn btn-success"
+                type="submit"
+                onclick="enregistrer()"
+              >
+                Enregistrer
+              </button>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <div class="col-md-2 offset-5">
+              <button class="btn btn-warning" type="reset" id="effacer">
+                Annuler
+              </button>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <div class="col-md-2 offset-5">
+              <button class="btn btn-danger" type="submit" onclick="afficher()">
+                Afficher
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

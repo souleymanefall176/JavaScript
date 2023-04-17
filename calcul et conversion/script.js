@@ -48,19 +48,17 @@ calculer.addEventListener("click", (e) => {
 });
 
 //CONVERSION
-decimal.addEventListener("keydown", (e) => {
+decimal.addEventListener("keyup", (e) => {
   valeur_decimal = parseInt(e.target.value);
 
-  if (e.key === "Enter") {
-    let reste = 0;
-    let valBinaire = 0;
-    let i = 1;
-    while (valeur_decimal !== 0) {
-      reste = valeur_decimal % 2;
-      valBinaire = valBinaire + reste * i;
-      i = i * 10;
-      valeur_decimal = Math.floor(valeur_decimal / 2);
-    }
+  let reste = 0;
+  let valBinaire = 0;
+  let i = 1;
+  while (valeur_decimal !== 0) {
+    reste = valeur_decimal % 2;
+    valBinaire = valBinaire + reste * i;
+    i = i * 10;
+    valeur_decimal = Math.floor(valeur_decimal / 2);
 
     binaire.value = valBinaire;
   }
