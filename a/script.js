@@ -94,7 +94,7 @@ nom.onblur = function () {
 };
 //Erreur tel
 tel.onblur = function () {
-  if (checkLength(tel.value) === 0) {
+  if (checkTel(tel.value) === 0) {
     erreurTel.removeAttribute("hidden");
   } else {
     erreurTel.setAttribute("hidden", "");
@@ -134,34 +134,48 @@ function checkAlphabet(text) {
   }
   return ok;
 }
-function checkLength(num) {
-  let ok = 0;
+function checkTel(num) {
+  let ok;
   if (num.length === 9) {
-    ok = 1;
+    if (
+      num[0] === "7" &&
+      (num[1] === "0" ||
+        num[1] === "5" ||
+        num[1] === "6" ||
+        num[1] === "7" ||
+        num[1] === "8")
+    ) {
+      ok = 1;
+    } else {
+      ok = 0;
+    }
   } else {
     ok = 0;
   }
   return ok;
 }
 function checkPassword(psw) {
-  let ok = 0;
-  for (let i = 0; i < psw.length; i++) {
-    if (psw.length === 5) {
+  let ok;
+  if (
+    psw.length === 5 &&
+    psw[psw.length - 1] >= "0" &&
+    psw[psw.length - 1] <= "9"
+  ) {
+    for (let i = 0; i < psw.length - 1; i++) {
       if (
-        (psw[i] <= "a" && psw[i] >= "z") ||
-        (psw[i] <= "A" && psw[i] >= "Z") ||
-        (psw[psw.length - 1] <= "0" && psw[psw.length - 1] >= "9")
+        (psw[i] >= "a" && psw[i] <= "z") ||
+        (psw[i] >= "A" && psw[i] <= "Z")
       ) {
         ok = 1;
       } else {
         ok = 0;
         break;
       }
-    } else {
-      ok = 0;
     }
-    return ok;
+  } else {
+    ok = 0;
   }
+  return ok;
 }
 function checkAge(age) {
   let ok;
