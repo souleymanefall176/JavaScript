@@ -63,6 +63,7 @@ const bouton = document.getElementById("button");
 const positionnement = document.querySelector(".bouton1");
 const main = document.querySelector("body");
 const bodyform = document.querySelector(".card-body");
+let i = 1;
 
 bouton.addEventListener("click", (e) => {
   e.preventDefault();
@@ -79,7 +80,7 @@ prenom.onblur = function () {
   } else {
     erreurPrenom.setAttribute("hidden", "");
   }
-  nomUser.value = prenom.value;
+  nomUser.value = prenom.value[0];
   email.value = prenom.value;
 };
 //Erreur nom
@@ -89,8 +90,9 @@ nom.onblur = function () {
   } else {
     erreurNom.setAttribute("hidden", "");
   }
-  nomUser.value += nom.value;
-  email.value += nom.value;
+  nomUser.value += nom.value + i;
+  email.value += nom.value + i + "@groupeisi.com";
+  i++;
 };
 //Erreur tel
 tel.onblur = function () {
@@ -115,7 +117,6 @@ age.onblur = function () {
   } else {
     erreurAge.setAttribute("hidden", "");
   }
-  email.value += age.value + "@groupeisi.com";
 };
 
 //Fonction qui permet de verifier si une chaine est alphabetique
@@ -179,7 +180,7 @@ function checkPassword(psw) {
 }
 function checkAge(age) {
   let ok;
-  if (age >= 8) {
+  if (age >= 8 && age <= 100) {
     ok = 1;
   } else {
     ok = 0;
@@ -190,7 +191,7 @@ function checkAge(age) {
 function enregistrer() {
   let nomvalue = nom.value;
   let prenomvalue = prenom.value;
-  let agevalue = prenom.value;
+  let agevalue = age.value;
   let emailvalue = email.value;
   let nomUservalue = nomUser.value;
   let telvalue = tel.value;
@@ -204,15 +205,30 @@ function enregistrer() {
     telvalue: telvalue,
     passwordvalue: passwordvalue,
   };
-
   let personneJson = JSON.stringify(personne);
-  localStorage.setItem("stockage", personneJson);
+  if (
+    checkAlphabet(nom.value) === 1 &&
+    checkAlphabet(prenom.value) === 1 &&
+    checkAge(age.value) === 1 &&
+    checkTel(tel.value) === 1 &&
+    checkPassword(password.value) === 1
+  ) {
+    localStorage.setItem("stockage", personneJson);
+  }
 }
 
 function afficher() {
   let personneJson = localStorage.getItem("stockage");
   let personne = JSON.parse(personneJson);
-  console.table([personne]);
+  if (
+    checkAlphabet(nom.value) === 1 &&
+    checkAlphabet(prenom.value) === 1 &&
+    checkAge(age.value) === 1 &&
+    checkTel(tel.value) === 1 &&
+    checkPassword(password.value) === 1
+  ) {
+    console.table([personne]);
+  }
 }
 effacer.addEventListener("click", (e) => {
   nom.value = "";
