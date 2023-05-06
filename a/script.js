@@ -63,6 +63,7 @@ const bouton = document.getElementById("button");
 const positionnement = document.querySelector(".bouton1");
 const main = document.querySelector("body");
 const bodyform = document.querySelector(".card-body");
+const enregistre = document.getElementById("enregistre");
 let i = 1;
 
 bouton.addEventListener("click", (e) => {
@@ -135,25 +136,28 @@ function checkAlphabet(text) {
   }
   return ok;
 }
-function checkTel(num) {
-  let ok;
-  if (num.length === 9) {
-    if (
-      num[0] === "7" &&
-      (num[1] === "0" ||
-        num[1] === "5" ||
-        num[1] === "6" ||
-        num[1] === "7" ||
-        num[1] === "8")
-    ) {
-      ok = 1;
+tel.addEventListener("keyup", (e) => {
+  //on peut mettre e.shiftkey === true
+  let touch = e.key.toUpperCase();
+  if (
+    touch !== "Shift" &&
+    e.touch !== "capslock" &&
+    e.touch !== "backspace" &&
+    e.touch !== "enter"
+  ) {
+    if (!(e.key >= 0 && e.key <= 9)) {
+      erreurTel.removeAttribute("hidden");
     } else {
-      ok = 0;
+      erreurTel.setAttribute("hidden", "");
     }
-  } else {
-    ok = 0;
   }
-  return ok;
+});
+
+function checkTel(num) {
+  if (num.length === 9) {
+  } else {
+    return false;
+  }
 }
 function checkPassword(psw) {
   let ok;
@@ -188,7 +192,7 @@ function checkAge(age) {
   return ok;
 }
 
-function enregistrer() {
+enregistre.click = function () {
   let nomvalue = nom.value;
   let prenomvalue = prenom.value;
   let agevalue = age.value;
@@ -215,7 +219,7 @@ function enregistrer() {
   ) {
     localStorage.setItem("stockage", personneJson);
   }
-}
+};
 
 function afficher() {
   let personneJson = localStorage.getItem("stockage");
@@ -230,6 +234,18 @@ function afficher() {
     console.table([personne]);
   }
 }
+function checkChamp() {
+  if (
+    prenom.value.trim() !== "" &&
+    nom.value.trim() !== "" &&
+    age.value.trim() !== "" &&
+    password.value.trim() !== "" &&
+    tel.value.trim() !== ""
+  ) {
+  } else {
+    alert("Tout les champs sont obligatoires");
+  }
+}
 effacer.addEventListener("click", (e) => {
   nom.value = "";
   prenom.value = "";
@@ -239,3 +255,13 @@ effacer.addEventListener("click", (e) => {
   tel.value = "";
   password.value = "";
 });
+//localStorage Json
+//Supression d'element à la fin
+//let T
+// T.pop();
+// supression avec indice
+// tableau.splice(indice,nbrElements);
+// supprimer le "h" dans "hello"
+// let text = T["hello"];
+// let chaine = text.splice(1,1);
+//faire recherche sur substr, indexof,

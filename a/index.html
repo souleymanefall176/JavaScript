@@ -71,7 +71,7 @@
           <label for="tel">Telephone</label>
           <input
             class="form-control"
-            type="number"
+            type="text"
             name="tel"
             id="tel"
             required
@@ -92,10 +92,12 @@
 
           <div class="row mt-2">
             <div class="col-md-2 offset-5">
+              <!--ajouter l'evenement au niveau de la balise-->
               <button
+                id="enregistre"
                 class="btn btn-success"
-                type="submit"
-                onclick="enregistrer()"
+                type="button"
+                onclick="checkChamp()"
               >
                 Enregistrer
               </button>
