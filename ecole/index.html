@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Ecole</title>
+  </head>
+  <body>
+    <div class="main">
+      <div class="titre">
+        <h1>ISI</h1>
+      </div>
+      <div class="forms">
+        <form>
+          <select name="classe" id="classe">
+            <option value="" default>Choisir la classe...</option>
+            <option value="L1" id="L1">L1</option>
+            <option value="L2" id="L2">L2</option>
+            <option value="L3" id="L3">L3</option>
+          </select>
+          <br /><label for="">Filiere</label>
+          <input type="text" placeholder="Saisir la filiere..." id="filiere" />
+          <h2 class="error" id="msgErrfil" hidden>
+            Filiere indisponible (Genie Logiciel - CyberSecurite)
+          </h2>
+          <label for="">Nombre Etudiants</label>
+          <input
+            type="text"
+            placeholder="Saisir le nombre d'étudiants..."
+            id="NbrEt"
+          />
+          <h2 class="error" id="msgErrNbrEt" hidden>Nombre incorrecte</h2>
+          <label for="">Code Etudiant</label>
+          <input type="text" disabled id="codeEt" />
+          <label for="">Nom Etudiant</label>
+          <input
+            type="text"
+            placeholder="Saisir le nom de l'étudiant..."
+            id="nomEt"
+          />
+          <h2 class="error" id="msgErrNom" hidden>Nom incorrecte</h2>
+          <label for="">Prenom Etudiant</label>
+          <input
+            type="text"
+            placeholder="Saisir le prenom de l'étudiant..."
+            id="prenomEt"
+          />
+          <h2 class="error" id="msgErrPre" hidden>Prenom incorrecte</h2>
+          <label for="">Date de Naissance Etudiant</label>
+          <input
+            type="date"
+            placeholder="Saisir la date de naissance de l'étudiant..."
+            id="birdthdayEt"
+          />
+          <label for="">Moyenne Etudiant</label>
+          <input
+            type="text"
+            placeholder="Saisir la moyenne de l'étudiant..."
+            id="moyEt"
+          />
+          <h2 class="error" id="msgErrMoy" hidden>Moyenne incorrecte</h2>
+        </form>
+        <button id="enregistrer" onclick="checkChamp()">Enregistrer</button>
+        <button id="afficher">Afficher</button>
+        <button id="annuler">Annuler</button>
+      </div>
+    </div>
+    <div id="affichage" hidden>
+      <table cellspacing="0" id="table">
+        <tr>
+          <th>Code Etudiant</th>
+          <th>Classe</th>
+          <th>Filiere</th>
+          <th>Nom Etudiant</th>
+          <th>Prenom Etudiant</th>
+          <th>Date de Naissance</th>
+          <th>Moyenne Etudiant</th>
+        </tr>
+      </table>
+    </div>
+    <script src="script/app.js"></script>
+  </body>
+</html>

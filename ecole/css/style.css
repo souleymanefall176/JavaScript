@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2? family= Poppins:wght@300;400;500;700 & display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.main{
+    border: 2px solid rgba(43, 121, 210,0.7);
+    border-radius: 15px;
+    width: 50%;
+    min-height: 85vh;
+    
+}
+.titre{
+    width: 100%;
+    padding: 15px;
+    border-top-left-radius: 13px;
+    border-top-right-radius: 13px;
+    background-color: rgb(43, 121, 210);
+    text-align: center;
+    margin-bottom: 10px;
+    
+}
+.titre h1{
+    color: white;
+    font-weight: bold;
+}
+.forms{
+    padding: 20px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+}
+.forms select{
+    padding: 13px;
+    font-size: 12px;
+    font-weight: bold;
+    background-color: rgb(43, 121, 210);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    width: 150px;
+    margin-left: 38%;
+    cursor: pointer;
+
+}
+.forms select:hover{
+    background-color: rgba(43, 121, 210,0.8);
+}
+.forms input{
+    width: 100%;
+}
+label{
+    color: rgba(0,0,0,0.5);
+    margin: 5px;
+}
+input{
+    margin: 5px;
+    padding: 5px;
+    border-radius: 6px;
+    border: 1px solid rgba(0,0,0,0.5);
+    outline: none;
+}
+.error{
+    font-size: 12px;
+    font-weight: 300;
+    color: red;
+    margin: 5px;
+
+}
+button{
+    padding: 13px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    font-size: 16px;
+    margin-left: 38%;
+    cursor: pointer;
+    width: 150px;
+    margin-bottom: 5px;
+    color: white;
+}
+#afficher{
+    background-color: rgb(238, 230, 0);
+}
+#afficher:hover{
+    background-color: rgba(238, 230, 0,0.8);
+}
+#annuler{
+    background-color: rgb(238, 52, 0);
+    
+}
+#annuler:hover{
+    background-color: rgba(238, 52, 0,0.8);
+}
+
+#enregistrer{
+    background-color: rgb(2, 129, 2);
+    
+}
+#enregistrer:hover{
+    background-color: rgba(2, 129, 2,0.8);
+}
+#affichage{
+    margin-top: 25px;
+}
+#affichage table tr td,th{
+    border: 2px solid white;
+    padding: 10px;
+    color: white;
+    text-align: center;
+
+}
+#affichage table tr th{
+    background-color: rgb(43, 121, 210);
+}
+#affichage table tr td{
+    background-color: rgb(122, 176, 237);
+    
+}
