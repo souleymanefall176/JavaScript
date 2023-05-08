@@ -163,6 +163,7 @@ enregistrer.addEventListener("click", (e) => {
   classes.push(classe1);
   ligne = document.createElement("tr");
   table.appendChild(ligne);
+  //on ajoute les valeurs du tableau
   ligne.innerHTML = `
     <td>${classe1.tabEt.code}</td>
     <td>${classe1.classe}</td>
@@ -180,6 +181,7 @@ enregistrer.addEventListener("click", (e) => {
     <td>${birdthdayEt.value}</td>
     <td>${moyEt.value}</td>`;
   */
+  //A chaque enregistrement on vide les champs de saisit
   classe.value = "";
   filiere.value = "";
   nomEt.value = "";
@@ -192,6 +194,7 @@ enregistrer.addEventListener("click", (e) => {
 //evenement qui efface le contenu des champs à la clique d'annuler
 annuler.addEventListener("click", (e) => {
   e.preventDefault();
+  //là je vide les champs
   classe.value = "";
   filiere.value = "";
   nomEt.value = "";
@@ -200,7 +203,9 @@ annuler.addEventListener("click", (e) => {
   birdthdayEt.value = "";
   moyEt.value = "";
   codeEt.value = "";
+  //là j'enleve les lignes ajoutés
   table.removeChild(ligne);
+  //là je cache le tableau vue qu'il n'y a aucun valeurs
   affichage.setAttribute("hidden", true);
 });
 //**************************PARTIE ECOUTEUR D'EVENEMENTS FIN
