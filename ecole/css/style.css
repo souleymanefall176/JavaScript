@@ -87,11 +87,17 @@ button{
     outline: none;
     border-radius: 10px;
     font-size: 16px;
-    margin-left: 38%;
     cursor: pointer;
     width: 150px;
-    margin-bottom: 5px;
+    margin: 10px 0;
     color: white;
+}
+input:focus{
+    border: 2px solid rgba(43, 121, 210,0.8);
+}
+input:disabled{
+    background-color: rgba(0,0,0,0.2);
+    outline: none;
 }
 #afficher{
     background-color: rgb(238, 230, 0);
@@ -130,4 +136,8 @@ button{
 #affichage table tr td{
     background-color: rgb(122, 176, 237);
     
+}
+.bouton{
+    display: flex;
+    justify-content: space-around;
 }

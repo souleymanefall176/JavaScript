@@ -20,6 +20,9 @@ const annuler = document.getElementById("annuler");
 const affichage = document.getElementById("affichage");
 const table = document.getElementById("table");
 const codevalue = "";
+let ligne;
+let classes = [];
+
 let i = 1;
 
 //**************************PARTIE FONCTION DEBUT
@@ -88,7 +91,7 @@ function checkNbrEt(nbr) {
 //**************************PARTIE ECOUTEUR D'EVENEMENTS DEBUT
 
 //bouton afficher pour montrer l'etudiant enregistrer dans un tableau
-//evenement declenche à la saisit du prenom
+//evenement declenche l'affichage d'erreur ou non à la saisit du prenom
 prenomEt.addEventListener("keyup", (e) => {
   if (checkAlphabet(prenomEt.value) === 0) {
     msgErrPre.removeAttribute("hidden");
@@ -96,6 +99,7 @@ prenomEt.addEventListener("keyup", (e) => {
     msgErrPre.setAttribute("hidden", true);
   }
 });
+//evenement qui genere le code apres saisit du prenom
 prenomEt.addEventListener("blur", (e) => {
   codeEt.value =
     prenomEt.value[0].toUpperCase() +
@@ -108,6 +112,7 @@ prenomEt.addEventListener("blur", (e) => {
   }
   i++;
 });
+//evenement qui declenche l'affichage d'erreur  ou non à la saisi du nom
 nomEt.addEventListener("keyup", (e) => {
   if (checkAlphabet(nomEt.value) === 0) {
     msgErrNom.removeAttribute("hidden");
@@ -141,9 +146,32 @@ afficher.addEventListener("click", (e) => {
 //bouton enregistrer pour enregistrer l'etudiant
 enregistrer.addEventListener("click", (e) => {
   e.preventDefault();
-  let ligne = document.createElement("tr");
+  //là j'ai cree un objet qui recupere les valeurs des champs saisit
+  let classe1 = {
+    classe: classe.value,
+    filiere: filiere.value,
+    NbrEt: NbrEt.value,
+    tabEt: {
+      code: codeEt.value,
+      nom: nomEt.value,
+      prenom: prenomEt.value,
+      birdthday: birdthdayEt.value,
+      moy: moyEt.value,
+    },
+  };
+  //j'ajoute les donnes saisit dans le tableau classe1
+  classes.push(classe1);
+  ligne = document.createElement("tr");
   table.appendChild(ligne);
   ligne.innerHTML = `
+    <td>${classe1.tabEt.code}</td>
+    <td>${classe1.classe}</td>
+    <td>${classe1.filiere}</td>
+    <td>${classe1.tabEt.nom}</td>
+    <td>${classe1.tabEt.prenom}</td>
+    <td>${classe1.tabEt.birdthday}</td>
+    <td>${classe1.tabEt.moy}</td>`;
+  /*ligne.innerHTML = `
     <td>${codeEt.value}</td>
     <td>${classe.value}</td>
     <td>${filiere.value}</td>
@@ -151,5 +179,30 @@ enregistrer.addEventListener("click", (e) => {
     <td>${prenomEt.value}</td>
     <td>${birdthdayEt.value}</td>
     <td>${moyEt.value}</td>`;
+  */
+  classe.value = "";
+  filiere.value = "";
+  nomEt.value = "";
+  prenomEt.value = "";
+  NbrEt.value = "";
+  birdthdayEt.value = "";
+  moyEt.value = "";
+  codeEt.value = "";
+});
+//evenement qui efface le contenu des champs à la clique d'annuler
+annuler.addEventListener("click", (e) => {
+  e.preventDefault();
+  classe.value = "";
+  filiere.value = "";
+  nomEt.value = "";
+  prenomEt.value = "";
+  NbrEt.value = "";
+  birdthdayEt.value = "";
+  moyEt.value = "";
+  codeEt.value = "";
+  table.removeChild(ligne);
+  affichage.setAttribute("hidden", true);
 });
 //**************************PARTIE ECOUTEUR D'EVENEMENTS FIN
+//je devrais creer une nouvelle page d'affichage et je creerai un filtre
+//je pense que ce serait mieux de creer un autre tableua à l'interieur de l'objet classe qui recuperera les etudiants
