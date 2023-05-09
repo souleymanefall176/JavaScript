@@ -19,11 +19,16 @@ const afficher = document.getElementById("afficher");
 const annuler = document.getElementById("annuler");
 const affichage = document.getElementById("affichage");
 const table = document.getElementById("table");
+const recherche = document.getElementById("recherche");
+const chercher = document.getElementById("chercher");
+const filtre = document.getElementById("filtre");
 const codevalue = "";
-let ligne;
+let ligne = [];
 let classes = [];
+let valeur = [];
 
 let i = 1;
+let a = 0;
 
 //**************************PARTIE FONCTION DEBUT
 //fonction qui verifie si tous les champs ont été saisit
@@ -137,6 +142,34 @@ NbrEt.addEventListener("keyup", (e) => {
     msgErrNbrEt.setAttribute("hidden", true);
   }
 });
+//evenement declencher au choix de filtre
+//evenement declencher à la recherche d'un nom etudiants
+chercher.addEventListener("click", (e) => {
+  for (let i = 0; i < ligne.length; i++) {
+    if (filtre.value === "classe") {
+      valeur[i] = classes[i].classe;
+    } else if (filtre.value === "filiere") {
+      valeur[i] = classes[i].filiere;
+    } else if (filtre.value === "code") {
+      valeur[i] = classes[i].tabEt.code;
+    } else if (filtre.value === "nom") {
+      valeur[i] = classes[i].tabEt.nom;
+    } else if (filtre.value === "prenom") {
+      valeur[i] = classes[i].tabEt.prenom;
+    } else if (filtre.value === "naiss") {
+      valeur[i] = classes[i].tabEt.birdthday;
+    } else if (filtre.value === "moy") {
+      valeur[i] = classes[i].tabEt.moy;
+    }
+  }
+  for (let i = 0; i < ligne.length; i++) {
+    if (valeur[i].toUpperCase() !== recherche.value.toUpperCase()) {
+      ligne[i].setAttribute("hidden", true);
+    } else {
+      ligne[i].removeAttribute("hidden");
+    }
+  }
+});
 
 //evenement declencher au click d' afficher
 afficher.addEventListener("click", (e) => {
@@ -161,10 +194,12 @@ enregistrer.addEventListener("click", (e) => {
   };
   //j'ajoute les donnes saisit dans le tableau classe1
   classes.push(classe1);
-  ligne = document.createElement("tr");
-  table.appendChild(ligne);
+
+  ligne[a] = document.createElement("tr");
+
+  table.appendChild(ligne[a]);
   //on ajoute les valeurs du tableau
-  ligne.innerHTML = `
+  ligne[a].innerHTML = `
     <td>${classe1.tabEt.code}</td>
     <td>${classe1.classe}</td>
     <td>${classe1.filiere}</td>
@@ -181,6 +216,7 @@ enregistrer.addEventListener("click", (e) => {
     <td>${birdthdayEt.value}</td>
     <td>${moyEt.value}</td>`;
   */
+  a++;
   //A chaque enregistrement on vide les champs de saisit
   classe.value = "";
   filiere.value = "";

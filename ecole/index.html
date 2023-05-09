@@ -5,6 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>Ecole</title>
   </head>
   <body>
@@ -63,25 +70,49 @@
           <h2 class="error" id="msgErrMoy" hidden>Moyenne incorrecte</h2>
         </form>
         <div class="bouton">
-          <button id="enregistrer" onclick="checkChamp()">Enregistrer</button>
-          <button id="afficher">Afficher</button>
-          <button id="annuler">Annuler</button>
+          <button class="btn" id="enregistrer" onclick="checkChamp()">
+            Enregistrer
+          </button>
+          <button class="btn" id="afficher">Afficher</button>
+          <button class="btn" id="annuler">Annuler</button>
         </div>
       </div>
     </div>
-    <div id="affichage" hidden>
-      <table cellspacing="0" id="table">
-        <tr>
-          <th>Code Etudiant</th>
-          <th>Classe</th>
-          <th>Filiere</th>
-          <th>Nom Etudiant</th>
-          <th>Prenom Etudiant</th>
-          <th>Date de Naissance</th>
-          <th>Moyenne Etudiant</th>
-        </tr>
-      </table>
+    <h2>Affichage</h2>
+    <div class="main1">
+      <div class="filtrage">
+        <select name="filtre" id="filtre">
+          <option value="" selected>Filtrer par :</option>
+          <option value="classe">classe</option>
+          <option value="filiere">filiere</option>
+          <option value="code">code</option>
+          <option value="nom">nom</option>
+          <option value="prenom">prenom</option>
+          <option value="naiss">Date de naissance</option>
+          <option value="moy">Moyenne</option>
+        </select>
+      </div>
+      <div class="recherche">
+        <input type="search" id="recherche" />
+        <button id="chercher">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </div>
+      <div id="affichage" hidden>
+        <table cellspacing="0" id="table">
+          <tr>
+            <th>Code Etudiant</th>
+            <th>Classe</th>
+            <th>Filiere</th>
+            <th>Nom Etudiant</th>
+            <th>Prenom Etudiant</th>
+            <th>Date de Naissance</th>
+            <th>Moyenne Etudiant</th>
+          </tr>
+        </table>
+      </div>
     </div>
+
     <script src="script/app.js"></script>
   </body>
 </html>

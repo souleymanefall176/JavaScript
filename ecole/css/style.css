@@ -81,7 +81,7 @@ input{
     margin: 5px;
 
 }
-button{
+.btn{
     padding: 13px;
     border: none;
     outline: none;
@@ -137,7 +137,54 @@ input:disabled{
     background-color: rgb(122, 176, 237);
     
 }
+#filtre{
+    padding: 13px;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    width: 150px;
+    background-color: rgb(43, 121, 210);
+}
+.filtrage{
+    margin-top: 25px;
+    margin-bottom: 200px;
+}
+
 .bouton{
     display: flex;
     justify-content: space-around;
+}
+.recherche{
+    margin-top: 25px;
+}
+.recherche input{
+    width: 500px;
+    border: 1px solid rgb(122, 176, 237);
+}
+.recherche button{
+    transform: translateX(-250%);
+    border: none;
+    background-color: transparent;
+    color: rgb(122, 176, 237);
+    
+    cursor: pointer;
+}
+.main1{
+    border: 2px solid rgba(43, 121, 210,0.7);
+    border-radius: 15px;
+    width: 90%;
+    min-height: 85vh;
+    margin-top: 50px;
+    text-align: center;
+    padding: 5%;
+}
+h2{
+    color: rgb(43, 121, 210);
+    font-size: 35px;
+    font-weight: bold;
+    margin-top: 50px;
+
+    
 }
