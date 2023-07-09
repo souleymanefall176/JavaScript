@@ -1,0 +1,22 @@
+.css-containerBM {
+    width: 360px;
+    margin: 0 auto;
+    padding: 10px;
+}
+.css-containerAM {
+    width: 300px;
+    margin: auto;
+    
+}
+.css-containerH{
+    width: 1000px;
+}
+.css-containerRV{
+    width: 1000px;
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 0;
+}
+.css-cardRV{
+    padding: 30px;
+}

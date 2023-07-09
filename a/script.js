@@ -265,3 +265,5 @@ effacer.addEventListener("click", (e) => {
 // let text = T["hello"];
 // let chaine = text.splice(1,1);
 //faire recherche sur substr, indexof,
+
+//filter,find

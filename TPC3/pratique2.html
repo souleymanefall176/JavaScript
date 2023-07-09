@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=h, initial-scale=1.0" />
+    <title>TABLEAUX</title>
+    <link rel="stylesheet" href="bootstrap.css" />
+  </head>
+
+  <body>
+    <div class="container mt-3">
+      <div class="row float-right">
+        <button
+          type="button"
+          class="btn btn-primary btn-sm"
+          onclick="clickNouvelleClasse('a')"
+        >
+          Nouvelle Classe
+        </button>
+      </div>
+      <div class="row">
+        <div class="col-md-3 h5">Choisir une classe</div>
+        <div class="col-md-3">
+          <select
+            name=""
+            id="selectClass"
+            class="form-control"
+            onchange="onChangeClass()"
+          >
+            <option value=""></option>
+          </select>
+        </div>
+        <div class="col"></div>
+      </div>
+      <div>
+        <form id="formAjoutCl" hidden>
+          <div class="card">
+            <div class="card-header h4 text-center">Nouvelle Classe</div>
+            <div class="card-body">
+              <label for="">Code</label><br />
+              <input type="text" class="form-control" id="codeCl" /><br />
+              <label for="">Nom</label><br />
+              <input type="text" id="nomCl" class="form-control" /><br />
+              <label for="">Nombre etudiants Prévu</label><br />
+              <input type="number" class="form-control" id="nbETCl" /><br />
+              <button
+                type="button"
+                class="btn btn-sm btn-info"
+                onclick="enregistrerClass()"
+              >
+                Enregistrer
+              </button>
+              <button
+                type="button"
+                class="btn btn-sm btn-danger"
+                onclick="clickNouvelleClasse('c')"
+              >
+                Annuler
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div>
+        <form id="formAjoutEt" hidden>
+          <div class="card">
+            <div class="card-header h4 text-center">Nouveau Etudiant</div>
+            <div class="card-body">
+              <label for="">Matricule</label><br />
+              <input type="text" class="form-control" id="matriculeET" /><br />
+              <label for="">Prenom</label><br />
+              <input type="text" id="prenomET" class="form-control" /><br />
+              <label for="">Nom</label><br />
+              <input type="text" id="nomET" class="form-control" /><br />
+              <label for="">Moyenne</label><br />
+              <input type="number" id="moyET" class="form-control" /><br />
+              <button
+                type="button"
+                class="btn btn-sm btn-info"
+                onclick="enregistrerEtudiant()"
+              >
+                Enregistrer
+              </button>
+              <button
+                type="button"
+                class="btn btn-sm btn-danger"
+                onclick="clickNouveauEtudiant('c')"
+              >
+                Annuler
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div id="contenu"></div>
+    </div>
+  </body>
+  <script src="script2.js"></script>
+</html>
